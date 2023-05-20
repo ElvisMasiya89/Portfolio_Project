@@ -35,16 +35,20 @@ import os
 # Get the user's home directory
 home_dir = os.path.expanduser("~")
 
+PROJ_LIB_PATH = r'C:\Users\Admin\anaconda3\Lib\site-packages\pyproj\proj_dir\share\proj'
 # Construct the path to the GDAL library
 GDAL_LIBRARY_PATH = os.path.join(home_dir, 'anaconda3', 'Lib', 'site-packages', 'osgeo', 'gdal304.dll')
+GEOS_LIBRARY_PATH = os.path.join(home_dir, 'anaconda3', 'Lib', 'site-packages', 'osgeo', 'geos_c.dll')
 
 # Add the GDAL library path to the system's environment variable
 os.environ['GDAL_LIBRARY_PATH'] = GDAL_LIBRARY_PATH
+os.environ['GEOS_LIBRARY_PATH'] = GEOS_LIBRARY_PATH
 
 # Application definition
 
 INSTALLED_APPS = [
     'profiles',
+    'django.contrib.gis',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
