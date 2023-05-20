@@ -50,16 +50,11 @@ def login_view(request):
         form = AuthenticationForm(request)
     return render(request, 'profiles/login.html', {'form': form})
 
-
 @login_required
 def user_map_view(request):
-    user_locations = get_user_locations()
-    return render(request, 'profiles/user_map.html', {'user_locations': user_locations})
+    user_profiles = get_user_profiles()
+    return render(request, 'profiles/user_map.html', {'user_profiles': user_profiles})
 
-
-def get_user_locations():
-    users = UserProfile.objects.all()
-    user_locations = users.annotate(
-        transformed_location=Transform('location', 4326)
-    ).values('transformed_location', 'home_address', 'phone_number')
-    return user_locations
+def get_user_profiles():
+    user_profiles = UserProfile.objects.all()
+    return user_profiles.annotate(transformed_location=Transform('location', 4326))

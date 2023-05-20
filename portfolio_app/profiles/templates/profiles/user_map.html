@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load leaflet_tags %}
 
-
 {% block content %}
 <div id="map" style="height: 100vh;"></div>
 
@@ -23,7 +22,7 @@
                 </div>
             `;
 
-            L.marker([{{ user_profile.location.y }}, {{ user_profile.location.x }}])
+            L.marker([{{ user_profile.transformed_location.y }}, {{ user_profile.transformed_location.x }}])
                 .addTo(map)
                 .bindPopup(popupContent);
         {% endfor %}
