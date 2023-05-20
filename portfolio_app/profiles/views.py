@@ -1,7 +1,8 @@
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, redirect
 from .models import UserProfile
-
 
 
 @login_required
@@ -11,6 +12,7 @@ def profile(request):
 
 
 from django.contrib.auth.decorators import login_required
+
 
 @login_required
 def edit_profile(request):
@@ -25,8 +27,7 @@ def edit_profile(request):
         # Display the data before saving
         print(f"Home Address: {user_profile.home_address}")
         print(f"Phone Number: {user_profile.phone_number}")
-        print(f"Latitude: {user_profile.latitude}")
-        print(f"Longitude: {user_profile.longitude}")
+        print(f"Location: {user_profile.location}")
 
         # Save the updated user profile
         user_profile.save()
@@ -36,4 +37,13 @@ def edit_profile(request):
     return render(request, 'profiles/edit_profile.html', {'user_profile': user_profile})
 
 
-
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('profile')
+    else:
+        form = AuthenticationForm(request)
+    return render(request, 'profiles/login.html', {'form': form})

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold mb-4">User Profile</h1>
+  <div>
+    <p><strong>Username:</strong> {{ user_profile.user.username }}</p>
+    <p><strong>Email:</strong> {{ user_profile.user.email }}</p>
+    <p><strong>Home Address:</strong> {{ user_profile.home_address }}</p>
+    <p><strong>Phone Number:</strong> {{ user_profile.phone_number }}</p>
+    <p><strong>Location:</strong> {{ user_profile.location }}</p>
+  </div>
+</div>
+{% endblock %}
