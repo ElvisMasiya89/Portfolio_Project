@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load leaflet_tags %}
+
+
+{% block content %}
+<div id="map" style="height: 100vh;"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var map = L.map('map').setView([0, 0], 2); // Set initial map view and zoom level
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+
+        {% for user_profile in user_profiles %}
+            var popupContent = `
+                <div>
+                    <h3>{{ user_profile.user.username }}</h3>
+                    <p>Home Address: {{ user_profile.home_address }}</p>
+                    <p>Phone Number: {{ user_profile.phone_number }}</p>
+                </div>
+            `;
+
+            L.marker([{{ user_profile.location.y }}, {{ user_profile.location.x }}])
+                .addTo(map)
+                .bindPopup(popupContent);
+        {% endfor %}
+    });
+</script>
+{% endblock %}

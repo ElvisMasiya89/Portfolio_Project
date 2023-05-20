@@ -1,7 +1,9 @@
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-from django.shortcuts import render, redirect
+from django.contrib.gis.db.models.functions import Transform
+from django.shortcuts import redirect
+from django.shortcuts import render
 from .models import UserProfile
 
 
@@ -47,3 +49,17 @@ def login_view(request):
     else:
         form = AuthenticationForm(request)
     return render(request, 'profiles/login.html', {'form': form})
+
+
+@login_required
+def user_map_view(request):
+    user_locations = get_user_locations()
+    return render(request, 'profiles/user_map.html', {'user_locations': user_locations})
+
+
+def get_user_locations():
+    users = UserProfile.objects.all()
+    user_locations = users.annotate(
+        transformed_location=Transform('location', 4326)
+    ).values('transformed_location', 'home_address', 'phone_number')
+    return user_locations

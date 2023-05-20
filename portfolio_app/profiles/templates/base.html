@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-{% load static %} <!-- Add this line -->
+{% load static %}
+{% load leaflet_tags %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Profile</title>
   <link href="{% static 'profiles/styles.css' %}" rel="stylesheet">
+  {% leaflet_css %}
+  {% leaflet_js %}
 </head>
 <body>
   <nav class="bg-gray-800">
@@ -15,12 +18,16 @@
         <ul class="flex">
           <li><a class="text-gray-300 hover:text-white px-3 py-2" href="{% url 'profile' %}">Profile</a></li>
           <li><a class="text-gray-300 hover:text-white px-3 py-2" href="{% url 'edit_profile' %}">Edit Profile</a></li>
+          <li><a class="text-gray-300 hover:text-white px-3 py-2" href="{% url 'map' %}">Map</a></li> <!-- Add this line -->
         </ul>
       </div>
     </div>
   </nav>
 
   {% block content %}
+  {% endblock %}
+
+  {% block extra_js %}
   {% endblock %}
 </body>
 </html>

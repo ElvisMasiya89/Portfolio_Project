@@ -18,13 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 from profiles import views as profiles_views
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/', profiles_views.login_view, name='login'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('profile/', profiles_views.profile, name='profile'),
     path('edit-profile/', profiles_views.edit_profile, name='edit_profile'),
+    path('map/', profiles_views.user_map_view, name='map'),
 ]
-
-

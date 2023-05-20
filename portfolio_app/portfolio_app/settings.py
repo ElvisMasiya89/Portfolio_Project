@@ -48,6 +48,8 @@ os.environ['GEOS_LIBRARY_PATH'] = GEOS_LIBRARY_PATH
 
 INSTALLED_APPS = [
     'profiles',
+    'leaflet',
+    'geojson',
     'django.contrib.gis',
     'rest_framework',
     'django.contrib.admin',
@@ -147,3 +149,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+SPATIAL_REF_SYS = {
+    '4326': '+proj=longlat +datum=WGS84 +no_defs',
+}
