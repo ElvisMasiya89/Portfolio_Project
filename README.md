@@ -41,15 +41,17 @@ The Django User Profiles Project is a web application that allows users to creat
 
 4. Create a `.env` file in the `portfolio_app` project folder with the following contents:
 
-```plaintext
-# .env file
+   ```plaintext```
+   # .env file
 
-# Database configuration
-DB_NAME=your_database_name
-DB_USER=your_database_user
-DB_PASSWORD=your_database_password
-DB_HOST=your_database_host
-DB_PORT=your_database_port
+   # Database configuration
+   DB_NAME=your_database_name
+   DB_USER=your_database_user
+   DB_PASSWORD=your_database_password
+   DB_HOST=your_database_host
+   DB_PORT=your_database_port
+   
+   Replace your_database_name, your_database_user, your_database_password, your_database_host, and your_database_port with your actual database configuration.
 
 
 5. Install GDAL Python wheel:
