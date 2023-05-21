@@ -16,7 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -30,14 +29,16 @@ ALLOWED_HOSTS = []
 
 # GDAL_LIBRARY_PATH = r'C:\Users\Admin\anaconda3\Lib\site-packages\osgeo\gdal304.dll'
 
-import os
 
-# Get the user's home directory
 home_dir = os.path.expanduser("~")
 
-PROJ_LIB_PATH = r'C:\Users\Admin\anaconda3\Lib\site-packages\pyproj\proj_dir\share\proj'
+# Construct the path to the PROJ library
+PROJ_LIB_PATH = os.path.join(home_dir, 'anaconda3', 'Lib', 'site-packages', 'pyproj', 'proj_dir', 'share', 'proj')
+
 # Construct the path to the GDAL library
 GDAL_LIBRARY_PATH = os.path.join(home_dir, 'anaconda3', 'Lib', 'site-packages', 'osgeo', 'gdal304.dll')
+
+# Construct the path to the GEOS library
 GEOS_LIBRARY_PATH = os.path.join(home_dir, 'anaconda3', 'Lib', 'site-packages', 'osgeo', 'geos_c.dll')
 
 # Add the GDAL library path to the system's environment variable
@@ -90,8 +91,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio_app.wsgi.application'
 
-
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
@@ -108,7 +107,6 @@ DATABASES = {
         'PORT': config('DB_PORT'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -128,7 +126,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -140,7 +137,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -150,7 +146,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 SPATIAL_REF_SYS = {
     '4326': '+proj=longlat +datum=WGS84 +no_defs',
