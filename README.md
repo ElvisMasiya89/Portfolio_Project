@@ -103,17 +103,33 @@ The project includes a `.env` file where you can modify various settings such as
    
 ## Screenshots
 
+### Login
+
+<div align="center">
+  <kbd><img src="screenshots/login.png" alt="Login Page" height="500" width="800"></kbd>
+</div>
+
 ### User Profile Edit Page
 
-![User Profile Edit Page](screenshots/profile_edit.png)
+<div align="center">
+  <kbd><img src="screenshots/edit_profile.png" alt="User Profile Edit Page" height="500" width="800"></kbd>
+</div>
 
 ### User Map Page
 
-![User Map Page](screenshots/user_map.png)
+<div align="center">
+  <kbd><img src="screenshots/map1.png" alt="User Map Page" height="500" width="800"></kbd>
+  <kbd><img src="screenshots/map2.png" alt="User Map Page" height="500" width="800"></kbd>
+</div>
 
-### Admin Interface - User Profiles
+### User Profile
 
-![Admin Interface - User Profiles](screenshots/admin_user_profiles.png)
+<div align="center">
+  <kbd><img src="screenshots/profile.png" alt="User Interface - User Profile" height="500" width="800"></kbd>
+</div>
+
+
+
 
 
   
