@@ -102,19 +102,22 @@ The project includes a `.env` file where you can modify various settings such as
 - Initial Template: The initial template loaded is the login page. To create users and access the application, go to the admin URL mentioned above.
    
 ## Screenshots
-
-<kbd><img src="screenshots/edit_profile.png" alt="User Profile Edit Page" width="400"></kbd>
-
+ Login   
+<kbd><img src="screenshots/login.png" alt="Login Page"  height="1300" width="800"></kbd>
+   
 User Profile Edit Page
+<kbd><img src="screenshots/edit_profile.png" alt="User Profile Edit Page"  height="1300" width="800"></kbd>
 
-<kbd><img src="screenshots/map1.png" alt="User Map Page" width="400"></kbd>
-<kbd><img src="screenshots/map2.png" alt="User Map Page" width="400"></kbd>   
 
 User Map Page
+<kbd><img src="screenshots/map1.png" alt="User Map Page"  height="1300" width="800"></kbd>
+<kbd><img src="screenshots/map2.png" alt="User Map Page"  height="1300" width="800"></kbd>   
 
-<kbd><img src="screenshots/profile.png" alt="Admin Interface - User Profile" width="400"></kbd>
 
  User Profile
+<kbd><img src="screenshots/profile.png" alt="Admin Interface - User Profile" width="400"></kbd>
+
+
 
 
 
