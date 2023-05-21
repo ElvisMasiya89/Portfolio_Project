@@ -102,20 +102,31 @@ The project includes a `.env` file where you can modify various settings such as
 - Initial Template: The initial template loaded is the login page. To create users and access the application, go to the admin URL mentioned above.
    
 ## Screenshots
- Login   
-<kbd><img src="screenshots/login.png" alt="Login Page"  height="500" width="800"></kbd>
-   
-User Profile Edit Page
-<kbd><img src="screenshots/edit_profile.png" alt="User Profile Edit Page"   height="500" width="800"></kbd>
 
+### Login
 
-User Map Page
-<kbd><img src="screenshots/map1.png" alt="User Map Page"   height="500" width="800"></kbd>
-<kbd><img src="screenshots/map2.png" alt="User Map Page"   height="500" width="800"></kbd>   
+<div align="center">
+  <kbd><img src="screenshots/login.png" alt="Login Page" height="500" width="800"></kbd>
+</div>
 
+### User Profile Edit Page
 
- User Profile
-<kbd><img src="screenshots/profile.png" alt="User Interface - User Profile"  height="500" width="800"></kbd>
+<div align="center">
+  <kbd><img src="screenshots/edit_profile.png" alt="User Profile Edit Page" height="500" width="800"></kbd>
+</div>
+
+### User Map Page
+
+<div align="center">
+  <kbd><img src="screenshots/map1.png" alt="User Map Page" height="500" width="800"></kbd>
+  <kbd><img src="screenshots/map2.png" alt="User Map Page" height="500" width="800"></kbd>
+</div>
+
+### User Profile
+
+<div align="center">
+  <kbd><img src="screenshots/profile.png" alt="User Interface - User Profile" height="500" width="800"></kbd>
+</div>
 
 
 
