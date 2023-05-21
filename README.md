@@ -100,7 +100,20 @@ The project includes a `.env` file where you can modify various settings such as
 - Map View: Users can view a map that shows the locations of all registered users. Clicking on a user's icon displays their profile in a popup.
 - Accessing the Admin Site: To create and manage user profiles, access the Django admin site by going to `http://localhost:8000/admin` and logging in with superuser credentials.
 - Initial Template: The initial template loaded is the login page. To create users and access the application, go to the admin URL mentioned above.
-  
+   
+## Screenshots
+
+### User Profile Edit Page
+
+![User Profile Edit Page](screenshots/profile_edit.png)
+
+### User Map Page
+
+![User Map Page](screenshots/user_map.png)
+
+### Admin Interface - User Profiles
+
+![Admin Interface - User Profiles](screenshots/admin_user_profiles.png)
 
 
   
