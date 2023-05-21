@@ -1,10 +1,48 @@
-<!-- login.html -->
 {% extends 'base.html' %}
 
 {% load static %} <!-- Add this line -->
 {% load leaflet_tags %}
 {% block content %}
-<div class="container mx-auto">
+<style>
+  .login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid gray !important; /* Updated with !important */
+    transition: border-color 0.3s ease;
+  }
+
+  .form-input:focus {
+    border-color: blue !important; /* Updated with !important */
+    outline: none;
+  }
+
+  .login-button {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+  .login-button:hover {
+    background-color: darkblue;
+  }
+</style>
+
+<div class="login-container">
   <h1 class="text-3xl font-bold mb-4">Login</h1>
   <form method="post">
     {% csrf_token %}
@@ -14,7 +52,7 @@
       {{ field }}
     </div>
     {% endfor %}
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Login</button>
+    <button class="login-button" type="submit">Login</button>
   </form>
 </div>
 {% endblock %}
